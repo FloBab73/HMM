@@ -3,7 +3,7 @@ class Decode:
         self.observations = observations
         self.model = model
 
-    def forward(self, time, state):
+    def viterbi(self, time, state):
         if time == 0:
             return self.model.initial_distribution[state.index] * self.model.output_probabilities[state.name][
                 self.observations[time].index], [state]
@@ -12,7 +12,7 @@ class Decode:
             states = []
             best_state = 0
             for i in self.model.states:
-                value, states = self.forward(time - 1, i)
+                value, states = self.viterbi(time - 1, i)
                 value *= self.model.transition_probabilities[i.name][state.index]
                 if value > maximum:
                     maximum = value
@@ -24,7 +24,7 @@ class Decode:
             states = []
             best_state = 0
             for i in self.model.states:
-                value, states = self.forward(time - 1, i)
+                value, states = self.viterbi(time - 1, i)
                 if value > maximum:
                     maximum = value
                     best_state = i

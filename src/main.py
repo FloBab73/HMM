@@ -7,7 +7,7 @@ if __name__ == '__main__':
     evaluation = Eval(model, observations)
     decode = Decode(model, observations)
     prob = evaluation.forward(len(observations), 0)
-    maximum, states = decode.forward(len(observations), 0)
+    maximum, states = decode.viterbi(len(observations), 0)
     rel_maximum = maximum / prob
     print("Probability:", prob)
     print("Best States:")
