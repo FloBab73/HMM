@@ -1,4 +1,8 @@
-# HMM
+# Hidden Markov Models
+Prüfungsleistung für Digitale Sprachverarbeitung an der DHBW Karlsruhe
+
+[Link zu Github](https://github.com/FloBab73/HMM)
+
 Gruppe: Florian Babel, Johannes Welsch, Tom Witzel
 
 ## Benutzung
