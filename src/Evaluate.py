@@ -1,9 +1,9 @@
-class Eval:
+class Evaluate:
     def __init__(self, model, observations):
         self.observations = observations
         self.model = model
 
-    def forward(self, time, state):
+    def forward(self, time, state=None):
         if time == 0:  # Initialization
             return self.model.initial_distribution[state.index] * self.model.output_probabilities[state.name][
                 self.observations[time].index]

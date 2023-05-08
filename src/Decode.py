@@ -6,19 +6,20 @@ class Decode:
     def viterbi(self, time, state):
         if time == 0:  # Initialization
             return self.model.initial_distribution[state.index] * self.model.output_probabilities[state.name][
-                self.observations[time].index], [state]
+                self.observations[time].index], []
         elif time < len(self.observations):  # Recursion
             maximum = 0
             states = []
             best_state = None
             for i in self.model.states:
                 value, states = self.viterbi(time - 1, i)
-                value *= self.model.transition_probabilities[i.name][state.index]
+                value = value * self.model.transition_probabilities[i.name][state.index] * \
+                        self.model.output_probabilities[state.name][self.observations[time].index]
                 if value > maximum:
                     maximum = value
                     best_state = i
             states.append(best_state)
-            return maximum * self.model.output_probabilities[state.name][self.observations[time].index], states
+            return maximum, states
         else:  # Termination
             maximum = 0
             states = []
