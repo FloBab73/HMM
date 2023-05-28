@@ -16,6 +16,10 @@ Gruppe: Florian Babel, Johannes Welsch, Tom Witzel
 
 Die beiden letzten Ausgaben sind Nebenprodukte des Viterbi Algorithmus und werden mit ausgegeben.
 
+Für den gegebenen Input kommt folgendes Ergebnis heraus:
+
+<img height="200" src="res\result.png" alt="Output of given observation"/>
+
 ## Funktion
 Die Main ruft alle Bestandteile des Programms auf. Die _read.py_ ist nur fürs Einlesen der JSON Dateien zuständig. Die Daten werden im Model gespeichert. Die States und Observations bekommen eigene Datenstrukturen, um leichter sowohl auf die Namen, als auch die Indices zuzugreifen.
 
