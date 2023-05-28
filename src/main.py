@@ -7,10 +7,10 @@ if __name__ == '__main__':
     evaluation = Evaluate(model, observations)
     decode = Decode(model, observations)
 
-    prob = evaluation.forward(len(observations))
+    prob = evaluation.forward()
     print("forward probability: " + "{0:.5f}".format(prob))
     if prob != 0:
-        maximum, states = decode.viterbi(len(observations), 0)
+        maximum, states = decode.viterbi()
         rel_maximum = maximum / prob
         print("viterbi states:")
         for state in states:

@@ -5,9 +5,10 @@ class Model:
             self.index = index
 
     class Observation:
-        def __init__(self, index, name):
+        def __init__(self, index, name, time):
             self.name = name
             self.index = index
+            self.time = time
 
     def __init__(self, states, initial_distribution, transition_probabilities, alphabet, output_probabilities):
         self.output_probabilities = output_probabilities

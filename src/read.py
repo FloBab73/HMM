@@ -19,8 +19,8 @@ def read():
     data = json.load(file)
 
     observations = []
-    for date in data:
-        observations.append(Model.Observation(model.alphabet.index(date), date))
+    for idx, date in enumerate(data):
+        observations.append(Model.Observation(model.alphabet.index(date), date, idx))
 
     file.close()
 
