@@ -1,9 +1,8 @@
 # Hidden Markov Models
-Prüfungsleistung für Digitale Sprachverarbeitung an der DHBW Karlsruhe
 
-[Link zu Github](https://github.com/FloBab73/HMM)
+### Prüfungsleistung für Digitale Sprachverarbeitung an der DHBW Karlsruhe
 
-Gruppe: Florian Babel, Johannes Welsch, Tom Witzel
+### Gruppe: Florian Babel, Johannes Welsch, Tom Witzel
 
 ## Benutzung
 - __main.py__ in src/ ausführen und Ergebnisse in der Konsole anschauen
@@ -18,10 +17,10 @@ Die beiden letzten Ausgaben sind Nebenprodukte des Viterbi Algorithmus und werde
 
 Für den gegebenen Input kommt folgendes Ergebnis heraus:
 
-<img height="200" src="res\result.png" alt="Output of given observation"/>
+![result](res/result.png)
 
 ## Funktion
-Die Main ruft alle Bestandteile des Programms auf. Die _read.py_ ist nur fürs Einlesen der JSON Dateien zuständig. Die Daten werden im Model gespeichert. Die States und Observations bekommen eigene Datenstrukturen, um leichter sowohl auf die Namen, als auch die Indices zuzugreifen.
+Die Main ruft alle Bestandteile des Programms auf. Die _read.py_ ist nur fürs Einlesen der JSON Dateien zuständig. Die Daten werden im Modell gespeichert. Die States und Observations bekommen eigene Datenstrukturen, um leichter sowohl auf die Namen, als auch die Indices zuzugreifen.
 
 Die Funktionen wurden jeweils zweimal auf unterschiedliche Arten implementiert. Zuerst wurden die Funktionen rekursiv implementiert, wie es die Algorithmen vorgeben. Da auf dem Weg aber viele Werte mehrmals berechnet wurden, wurde der Algorithmus so geändert, dass alle Werte in einer Tabelle gespeichert werden. Außerdem hat die bisherige Implementierung des Viterbi Algorithmus nicht das korrekte Ergebnis geliefert. Daher sind im finalen Produkt die nicht rekursiven Funktion aktiv, die anderen sind aber noch im Code enthalten. Die folgenden Absätze beschreiben die rekursive Implementierung.
 
